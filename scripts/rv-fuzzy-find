@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+file_result=`git ls-files | awk '!/^\.yarn/' | fzy`
+
+[ -n "$file_result" ] && tr -d '\n' <<< "$file_result" | pbcopy

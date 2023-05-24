@@ -1,0 +1,15 @@
+[user]
+	name = Reid Villeneuve
+[core]
+	excludesfile = ~/.gitignore
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+	prompt = true
+[diff]
+	tool = nvimdiff
+[rerere]
+	enabled = 1
+	autoupdate = true
+[diff]
+	wsErrorHighlight = all

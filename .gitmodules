@@ -1,0 +1,12 @@
+[submodule "config/vim/plugins/copilot.vim"]
+	path = config/vim/plugins/copilot.vim
+	url = git@github.com:github/copilot.vim.git
+[submodule "config/vim/plugins/nvim-lspconfig"]
+	path = config/vim/plugins/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+[submodule "config/vim/plugins/papercolor-theme"]
+	path = config/vim/plugins/papercolor-theme
+	url = git@github.com:NLKNguyen/papercolor-theme.git
+[submodule "config/vim/plugins/vim-commentary"]
+	path = config/vim/plugins/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
