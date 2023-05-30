@@ -6,5 +6,5 @@ if ($PWD == $RV_RVDEV_PROJECT_DIR."/repos/rvdev")
 
     nnoremap <leader><leader><leader>gm :echoerr "TODO: Make commit message map"
 endif
-"
+
 " vim:textwidth=80
