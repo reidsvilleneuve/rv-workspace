@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git diff --name-only "$RV_RVDEV_GIT_BASE"  HEAD | xargs -I% ./node_modules/.bin/eslint --fix %
+git diff --name-only "$RV_RVDEV_GIT_BASE"  HEAD | rg 'ts$' | xargs -I% ./node_modules/.bin/eslint --fix %

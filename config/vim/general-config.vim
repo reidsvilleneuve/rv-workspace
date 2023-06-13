@@ -172,7 +172,7 @@ nnoremap <leader><leader>m /RVDEV<Esc>2yt-ggpA: <Esc>:noh<CR>:startinsert!<CR>
 nnoremap <leader>m ggIRVDEV_FIXUP: <Esc>:startinsert!<CR>
 
 " Quick git diff
-nmap <leader>gd \cp<CR>:difft<CR>:vnew<CR>:difft<CR>:-1read !git show develop:./<C-R>+<C-F>F:b
+nmap <leader>gd \cp<CR>:difft<CR>:vnew<CR>:difft<CR>:-1read !git show HEAD:./<C-R>+<C-F>F:b
 
 "********"
 " System "
@@ -221,6 +221,7 @@ augroup AutoActionsBufferManagement
   autocmd FileType markdown setl tabstop=4
   " Work-around for omnifunc not setting for HTML files:
   autocmd FileType html setl omnifunc="v:lua.vim.lsp.omnifunc"
+  autocmd FileType gitcommit setl tabstop=4
 
   " Trigger `autoread` when files changes on disk
   "   - https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
