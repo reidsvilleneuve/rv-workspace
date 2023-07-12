@@ -56,12 +56,14 @@ alias gdt="git difftool"
 alias gl="git pull"
 alias glg="git log --stat --date=iso"
 alias glo="git log --oneline"
+alias gloss="git log --oneline --show-signature"
 alias glog="git log --oneline --graph"
 alias gloga="git log --oneline --graph --all"
 alias gm="git merge"
 alias gmt="git mergetool"
 alias gp="git push"
 alias grb="git rebase"
+alias grbo="git rebase --onto"
 alias grbi="git rebase --interactive"
 alias grbc="git rebase --continue"
 alias gs="git show"
@@ -79,7 +81,7 @@ alias gfc="git ls-files | awk '!/^\.yarn/' | fzy | tr -d '\n' | pbcopy && pbpast
 alias gbl="git blame"
 
 # Possibly-damaging commands are prefixed with "UNSAFE_" to decrease chance of accidental execution:
-alias UNSAFE_gpfwl="git push --force-with-lease"
+alias UNSAFE_gpfwl="git push --force-with-lease --force-if-includes"
 alias UNSAFE_grs="git restore"
 
 gbcur() { git branch --show-current; }

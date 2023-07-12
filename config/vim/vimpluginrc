@@ -6,6 +6,7 @@ set incsearch
 
 "Clear last search highlighting
 nnoremap <Space> :noh<cr>
+nnoremap g<Space> :noh<cr>
 
 "vim-surround extension
 " set surround

@@ -28,7 +28,7 @@ augroup AutoActionsVisual
   autocmd InsertEnter,InsertLeave * set cul! " Remove line in insert mode
   autocmd WinEnter * call WindowEnterHighlight()
   autocmd WinLeave * call WindowLeaveHighlight()
-  " Not working. Perhaps see:
+  " Not working. Try using function, or perhaps see:
   "   - https://github.com/itchyny/vim-qfedit/issues/3
   "   - https://vi.stackexchange.com/questions/14065/autocmd-with-quickfix-window
   " autocmd BufEnter,BufNewFile,BufRead,WinEnter *
@@ -118,15 +118,6 @@ function! FzyCommand(choice_command, vim_command)
   endif
 endfunction
 
-" Commented out: FzyCommand doesn't seem to be working
-" nnoremap <leader>f :call FzyCommand("git ls-files", ":e")<cr>
-
-" RVDEV: In the shell, `rg '\w'` stops a pipe on a blank string via a non-0
-" exit code. It's not working here. We want this in order to not overwrite the
-" system clipboard if we don't choose a file:
-" Commented out for tmux solution:
-" nnoremap <leader><leader>f <C-w>s :terminal git ls-files \| awk '!/^\.yarn/' \| fzy  \| rg '\w' \| tr -d '\n' \| pbcopy<CR>A
-
 " Text search
 nnoremap <leader>f :grep 
 
@@ -155,6 +146,9 @@ set path=,,
 " Current file search into quickfix:
 nnoremap <leader><leader>P :cexpr []<CR>:g//caddexpr expand("%") . ":" . line(".") .  ":" . getline(".")<CR>:cope<CR>
 
+" Grep though all vim help files:
+nnoremap <leader>hf :grep $VIMRUNTIME/doc<C-f>Bh<C-c> 
+
 "*****"
 " Git "
 "*****"
@@ -169,7 +163,7 @@ nnoremap <leader>r :%s/\vpick (.*) (RVDEV_)(.*):/\L\3 \1 \U\2\3:<CR>
 nnoremap <leader><leader>m /RVDEV<Esc>2yt-ggpA: <Esc>:noh<CR>:startinsert!<CR>
 
 " Quick commit message header annotations
-nnoremap <leader>m ggIRVDEV_FIXUP: <Esc>:startinsert!<CR>
+nnoremap <leader>m ggIRVDEV_PICK: <Esc>:startinsert!<CR>
 
 " Quick git diff
 nmap <leader>gd \cp<CR>:difft<CR>:vnew<CR>:difft<CR>:-1read !git show HEAD:./<C-R>+<C-F>F:b
