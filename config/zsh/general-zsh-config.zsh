@@ -19,9 +19,12 @@ bindkey -v
 
 set -o ignoreeof # Stops exiting upon ctrl-d
 export KEYTIMEOUT=2 # Very short post-<Esc> timeout
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
 # Share history between panes. TODO: Reserach what `-o` flag does (I've used it
 #   for this before and don't recall why):
-setopt share_history
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
 
 #################
 #    Visuals    #

@@ -1,7 +1,0 @@
-#!/bin/zsh
-
-changed_files=`git diff --name-only "$RV_RVDEV_GIT_BASE" HEAD | rg 'ts$'`
-
-echo "Eslint: Files changed from $RV_RVDEV_GIT_BASE:\n$changed_files"
-
-xargs ./node_modules/.bin/eslint --fix <<< "$changed_files"

@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+changed_files=`git diff --name-only "$RV_RVDEVREPLACE_GIT_BASE" HEAD | rg 'ts$'`
+
+echo "Prettier: Files changed from $RV_RVDEVREPLACE_GIT_BASE:\n$changed_files"
+
+xargs -I% ./node_modules/.bin/prettier -w <<< "$changed_files"
