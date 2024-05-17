@@ -10,3 +10,9 @@
 [submodule "config/vim/plugins/vim-commentary"]
 	path = config/vim/plugins/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "repos/neovim"]
+	path = repos/neovim
+	url = git@github.com:neovim/neovim.git
+[submodule "config/vim/plugins/rust.vim"]
+	path = config/vim/plugins/rust.vim
+	url = https://github.com/rust-lang/rust.vim

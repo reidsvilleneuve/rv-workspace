@@ -30,3 +30,13 @@ vim.g.markdown_fenced_languages = {
 -- }
 -- Commented out as this doesn't seem necessary at the moment:
 -- require'lspconfig'.nxls.setup{}
+
+-- Add this kind of thing within Setup for settings:
+-- settings = {
+--   ['rust-analyzer'] = {
+--     diagnostics = {
+--       enable = false;
+--     }
+--   }
+-- }
+require'lspconfig'.rust_analyzer.setup{}
