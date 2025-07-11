@@ -2,4 +2,5 @@
 
 file_result=`git ls-files | awk '!/^\.yarn/' | fzy`
 
-[ -n "$file_result" ] && tr -d '\n' <<< "$file_result" | pbcopy
+# RVDEV: This needs to be multi-platform:
+[ -n "$file_result" ] && tr -d '\n' <<< "$file_result" | xclip -sel clip

@@ -20,14 +20,14 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
--- require'lspconfig'.angularls.setup{
---   root_dir = require('lspconfig.util').root_pattern(
---     -- `project.json` is used instead of `angular.json` in NX workspaces, so we
---     -- support both:
---     'angular.json',
---     'project.json'
---   )
--- }
+require'lspconfig'.angularls.setup{
+  root_dir = require('lspconfig.util').root_pattern(
+    -- `project.json` is used instead of `angular.json` in NX workspaces, so we
+    -- support both:
+    'angular.json',
+    'project.json'
+  )
+}
 -- Commented out as this doesn't seem necessary at the moment:
 -- require'lspconfig'.nxls.setup{}
 
@@ -39,4 +39,4 @@ vim.g.markdown_fenced_languages = {
 --     }
 --   }
 -- }
-require'lspconfig'.rust_analyzer.setup{}
+-- require'lspconfig'.rust_analyzer.setup{}
