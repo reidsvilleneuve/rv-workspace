@@ -1,4 +1,5 @@
-set timeoutlen=3000
+set timeoutlen=10000
+set nohidden
 
 " Ensure matchit is used for % key
 filetype plugin on
