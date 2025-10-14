@@ -1,1 +1,1 @@
-nnoremap <leader>c :tabe ~/.config/nvim/plugin<CR>
+nnoremap <leader><leader><leader>rc :tabe ~/.config/nvim/plugin<CR>

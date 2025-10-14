@@ -1,3 +1,5 @@
+set wildignore+=target/**,tags
+
 nnoremap <leader>d :w !diff % -<CR>
 nnoremap <leader>e :e %:h/
 nnoremap <leader>E :e **/**<Left>

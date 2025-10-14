@@ -1,6 +1,6 @@
-if exists("b:did_ftplugin")
-    finish
-endif
+"if exists("b:did_ftplugin")
+"    finish
+"endif
 
 nnoremap <leader>K :!termux-open-url https://doc.rust-lang.org/std/string/struct.String.html?search=""<Left>
 nnoremap <leader>1 :wa<CR>:!cargo check<CR>
