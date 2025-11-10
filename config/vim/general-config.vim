@@ -70,14 +70,16 @@ nnoremap <leader>q :'m,.
 
 " Quick macro replay
 nnoremap Q @q
-nnoremap <leader>Q :'m,.norm @q<CR>
+nnoremap <leader>Q :'',.norm @q<CR>
 vnoremap <leader>Q :'<,'>norm @q<CR>
 nnoremap <leader><leader>Q :g//norm @q<CR>
+nnoremap <leader><leader><leader>Q :'m,.norm @q<CR>
 
 " Quick . replay
-nnoremap <leader>. :'m,.norm .<CR>
+nnoremap <leader>. :'',.norm .<CR>
 vnoremap <leader>. :'<,'>norm .<CR>
 nnoremap <leader><leader>. :g//norm .<CR>
+nnoremap <leader><leader><leader>. :'m,.norm .<CR>
 
 " Newline-ify a ', '-separated list
 nnoremap <leader>,, :s/, /,\r/g<CR>='.:noh<CR>
