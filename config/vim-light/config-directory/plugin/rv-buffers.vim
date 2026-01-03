@@ -4,6 +4,7 @@ nnoremap <leader>d :w !diff % -<CR>
 nnoremap <leader>e :e %:h/
 nnoremap <leader>E :e **/**<Left>
 nnoremap <leader>bl :ls<CR>:b 
+nnoremap <leader>bd :bp<CR>:bd #<CR>
 
 " Window focus
 nnoremap <C-j> <C-w>j
