@@ -1,5 +1,5 @@
 #!/bin/sh
 
-git bundle create ~/rvdevreplace/backup/rvdevreplace-project-backup.pack --all
-open ~/rvdev/backup
+git bundle create RVDEVREPLACE_PROJECTDIR/backup/rvdevreplace-project-backup.pack --all
+open RVDEVREPLACE_PROJECTDIR
 open "https://drive.google.com/" # RVDEV: Add path to GDrive folder
