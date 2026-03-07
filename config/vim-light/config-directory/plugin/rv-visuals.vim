@@ -6,3 +6,5 @@ set statusline=%<%f\ (%{bufnr('%')})\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set listchars=eol:↵,tab:>-,trail:~,extends:>,precedes:<
 set list
 set showbreak=↪
+
+nnoremap <silent> g<Space> :noh<CR>

@@ -1,6 +1,6 @@
 let s:project_dirs = [
-  \ "RVDEVREPLACE_PROJECTDIR/repos/rvdevreplace",
-  \ "RVDEVREPLACE_PROJECTDIR/repos/rvdevreplace2"
+  \ "RVDEVREPLACE_PROJECTDIR/repos/rvdev",
+  \ "RVDEVREPLACE_PROJECTDIR/repos/rvdev2"
 \ ]
 
 if index(s:project_dirs, $PWD) >= 0
