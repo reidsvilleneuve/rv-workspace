@@ -32,11 +32,14 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # -- Prompt --
 
-local rv_git_current_branch_or_blank() {
-    echo `git branch --show-current 2> /dev/null || echo "(No git repo)"`
-}
+# Version control setup
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' - %b'
+
 setopt PROMPT_SUBST # Allow substitutions in prompt
-PROMPT=$'---> %? (%T)\n\n\n%80<..<%~%<< - $(rv_git_current_branch_or_blank)\n🐉 > '
+
+PROMPT=$'---> %? (%T)\n\n\n%80<..<%~%<<${vcs_info_msg_0_}\n🐉 $ '
 
 ###################
 #    Shortcuts    #
