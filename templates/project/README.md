@@ -1,8 +1,12 @@
-RVDEVREPLACE_NAME
-RVDEVREPLACE_PREFIX
-RVDEVREPLACE_PROJECTDIR
-RVDEVREPLACE_PROJECTMANAGER
-rvdevreplace_name
-rvdevreplace_prefix
+RVDEVREPLACE_Name
+RVDEVREPLACE_projectdir
+RVDEVREPLACE_ProjectManager
+RVDEVREPLACE_prefix
 
-find -name '*rvdevreplace_prefix*' | sed 's/\(.*\)\(rvdevreplace_prefix\)\(.*\)/\1\2\3 \1fm\3/' | xargs -I% echo %
+```
+find . -name '*RVDEVREPLACE_prefix*' | while read -r file; do mv "$file" "${file/RVDEVREPLACE_prefix/fm}"; done
+```
+
+```
+grep -rlF RVDEVREPLACE_Name . | xargs -I# ex +'%s/RVDEVREPLACE_Name/Feral Melon/g' +'wq' #
+```
