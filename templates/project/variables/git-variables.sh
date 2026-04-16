@@ -1,3 +1,3 @@
-rvdevreplace_prefix_git_current="UNSET"
-rvdevreplace_prefix_git_pr="UNSET"
-rvdevreplace_prefix_git_base="main"
+RVDEVREPLACE_prefix_git_current="UNSET"
+RVDEVREPLACE_prefix_git_pr="UNSET"
+RVDEVREPLACE_prefix_git_base="main"

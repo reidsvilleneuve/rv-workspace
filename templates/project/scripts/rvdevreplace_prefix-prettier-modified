@@ -1,7 +1,9 @@
 #!/bin/zsh
 
-changed_files=`git diff --name-only "${(q)RVDEVREPLACE_PREFIX_GIT_BASE}" HEAD | rg 'ts$'`
+source RVDEVREPLACE_projectdir/variables/git-variables.sh
 
-echo "Prettier: Files changed from ${(q)RVDEVREPLACE_PREFIX_GIT_BASE}:\n${(q)changed_files}"
+changed_files=`git diff --name-only "${(q)RVDEVREPLACE_prefix_git_base}" HEAD | rg 'ts$'`
+
+echo "Prettier: Files changed from ${(q)RVDEVREPLACE_prefix_git_base}:\n${(q)changed_files}"
 
 xargs -I% ./node_modules/.bin/prettier -w <<< "${(q)changed_files}"

@@ -4,7 +4,7 @@ Summary
 Links
 -----
 
-- [RVDEVREPLACE_PROJECTMANAGER story](RVDEV)
+- [RVDEVREPLACE_ProjectManager story](RVDEV)
 
 Tasks
 =====
@@ -47,7 +47,7 @@ RVDEV
 
 # Links
 
-- [RVDEVREPLACE_PROJECTMANAGER story](RVDEV)
+- [RVDEVREPLACE_ProjectManager story](RVDEV)
 
 # Happy-path testing steps
 
