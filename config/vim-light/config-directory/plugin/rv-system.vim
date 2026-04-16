@@ -7,3 +7,6 @@ nnoremap <silent> <leader>cpR :let @+=@%.':'.line('.')<CR>:echo "Current file's 
 nnoremap <silent> <leader>cpL :let @+=expand('%:p').' line '.line('.')<CR>:echo "Current file's full path and line number copied to system clipboard"<CR>
 nnoremap <silent> <leader>cpn :let @+=expand('%:t')<CR>:echo "Current file's name copied to system clipboard"<CR>
 nnoremap <silent> <leader>cpi :let @+='setBreakpoint("'.expand('%:p').'", '.line('.').')'<CR>:echo "Current full path and line number copied to system clipboard for node inspect"<CR>
+
+nnoremap <silent> Y "+y
+nnoremap <silent> YY ^"+y$
