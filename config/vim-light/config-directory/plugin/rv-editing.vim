@@ -1,6 +1,9 @@
 set timeoutlen=10000
 set nohidden
 
+" Inccommand resets `'` marker
+set inccommand=
+
 " Ensure matchit is used for % key
 filetype plugin on
 packadd! matchit
