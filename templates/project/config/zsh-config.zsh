@@ -12,6 +12,6 @@ workspace_directories=( \
     "RVDEVREPLACE_projectdir/repos/rvdev2" \
 )
 
-if [[ " $current_directory " ~= " ${workspace_directories[@]} " ]]; then
-    source "RVDEVREPLACE_projectdir/config/zsh-config-workspace.zsh"
+if [[ " $current_directory " =~ " ${workspace_directories[@]} " ]]; then
+    RVDEVREPLACE_prefix-source-workspace
 fi
