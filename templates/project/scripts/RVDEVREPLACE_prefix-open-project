@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pushd RVDEVREPLACE_projectdir/repos
+
+(cd rvdev && tmux new-session -d -s rvdev)
+
+tmux attach -t rvdev

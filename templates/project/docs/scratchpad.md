@@ -21,5 +21,3 @@ Done
 
 Notes
 =====
-
-vim:textwidth=80:tabstop=4:colorcolumn=81

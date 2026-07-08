@@ -119,7 +119,7 @@ alias pd="pushd"
 
 rv_send_command_to_every_pane() {
     for session in `tmux list-sessions -F '#S'`; do
-        for window in `tmux list-windows -t $session -F '#I' | sort` do;
+        for window in `tmux list-windows -t $session -F '#I' | sort`; do
             for pane in `tmux list-panes -t $session:$window -F '#P' | sort`; do
                 tmux send-keys -t "$session:$window.$pane" "$*" C-m
             done

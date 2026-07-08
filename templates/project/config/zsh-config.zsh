@@ -12,6 +12,6 @@ workspace_directories=( \
     "RVDEVREPLACE_projectdir/repos/rvdev2" \
 )
 
-if [[ " $current_directory " =~ " ${workspace_directories[@]} " ]]; then
+if [[ " ${workspace_directories[@]} " =~ " $current_directory " ]]; then
     RVDEVREPLACE_prefix-source-workspace
 fi

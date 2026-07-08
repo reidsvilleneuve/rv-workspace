@@ -11,5 +11,3 @@ if index(s:project_dirs, $PWD) >= 0
 
     nnoremap <leader><leader><leader>gm :echoerr "TODO: Make commit message map"
 endif
-
-" vim:textwidth=80
