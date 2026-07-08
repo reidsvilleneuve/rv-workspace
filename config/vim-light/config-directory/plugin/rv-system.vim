@@ -8,5 +8,20 @@ nnoremap <silent> <leader>cpL :let @+=expand('%:p').' line '.line('.')<CR>:echo 
 nnoremap <silent> <leader>cpn :let @+=expand('%:t')<CR>:echo "Current file's name copied to system clipboard"<CR>
 nnoremap <silent> <leader>cpi :let @+='setBreakpoint("'.expand('%:p').'", '.line('.').')'<CR>:echo "Current full path and line number copied to system clipboard for node inspect"<CR>
 
+" System copy + pasting
 nnoremap <silent> Y "+y
 nnoremap <silent> YY ^"+y$
+nnoremap <leader>P "+P
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+cabbrev %% <C-R>=expand('%:p:h')<CR>
+
+" Persistent undo. Set `undodir` in system config to customize location
+set undofile
+
+" Allow using faster old engine if file takes too long to parse
+set regexpengine=0
+
+" Modeline is useful but insecure over the long term
+set nomodeline

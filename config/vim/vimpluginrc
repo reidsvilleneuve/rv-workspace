@@ -1,3 +1,8 @@
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'michaeljsmith/vim-indent-object'
+packadd matchit
+
 "Highlight search terms
 set hlsearch
 
@@ -23,12 +28,12 @@ nnoremap YY ^"+y$
 vnoremap Y "+y
 
 "Paste from system clipboard
-nnoremap \P "+p
+nnoremap \P "+P
+nnoremap \p "+p
+vnoremap \p "+p
 
 " Newline-ify a ', '-separated list
 nnoremap \,, :s/, /,\r/g<CR>='.:noh<CR>
 
 " Quick macros with Q
 nnoremap Q @q
-
-" vim:ft=vim

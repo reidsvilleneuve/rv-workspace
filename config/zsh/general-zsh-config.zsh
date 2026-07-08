@@ -85,6 +85,8 @@ alias gfc="git ls-files | awk '!/^\.yarn/' | fzy | tr -d '\n' | pbcopy && pbpast
 # alias gitfzf="git ls-files | fzf"
 # alias gfcz="git ls-files | fzf | pbcopy"
 alias gbl="git blame"
+alias gfp="git merge-base --fork-point"
+alias gtl="git tag --list --sort=-creatordate"
 
 # Possibly-damaging commands are prefixed with "UNSAFE_" to decrease chance of accidental execution:
 alias UNSAFE_gpfwl="git push --force-with-lease --force-if-includes"
@@ -92,6 +94,7 @@ alias UNSAFE_grs="git restore"
 
 gbcur() { git branch --show-current; }
 gpsu() { git push --set-upstream origin `git branch --show-current`; }
+gmb() { git merge-base HEAD "origin/$1"; }
 
 # -- Tmux --
 
@@ -101,6 +104,10 @@ alias tsd='tmux new-session -d -s'
 alias tl='tmux list-sessions'
 alias tkss='tmux kill-session -t'
 alias tnw='tmux new-window'
+alias tttys='tmux list-panes -a -F "#S:#I:#P - #{pane_tty} - #{pane_current_command}"'
+
+# -- Ripgrep --
+alias rgh='rg --hidden'
 
 # -- Misc --
 
@@ -109,3 +116,22 @@ alias v="nvim"
 alias jspp="python -mjson.tool"
 alias scra="nvim ~/projects/self/docs/scratchpad.md"
 alias pd="pushd"
+
+rv_send_command_to_every_pane() {
+    for session in `tmux list-sessions -F '#S'`; do
+        for window in `tmux list-windows -t $session -F '#I' | sort` do;
+            for pane in `tmux list-panes -t $session:$window -F '#P' | sort`; do
+                tmux send-keys -t "$session:$window.$pane" "$*" C-m
+            done
+        done
+    done
+}
+
+#################
+#    Editing    #
+#################
+
+# `v` to edit command in vim
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line

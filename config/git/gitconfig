@@ -13,3 +13,5 @@
 	autoupdate = true
 [diff]
 	wsErrorHighlight = all
+[init]
+	defaultBranch = main
