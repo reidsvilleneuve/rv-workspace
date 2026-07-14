@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+file_name="`git branch --show-current | tr '[:upper:]' '[:lower:]' | sed 's/[^[:alnum:]]/-/g'`.md"
+file_path="RVDEVREPLACE_projectdir/docs/work-notes/in-progress/${(q)file_name}"
+
+if [ -e "${(q)file_path}" ]; then
+    echo "File already exists: ${(q)file_path}"
+    exit 1
+fi
+
+# This is for a `feature-someprefix-12345-some-description` format:
+story_number="`sed 's/^[^[:digit:]]*//g' <<< "${(q)file_name}" | cut -d '-' -f 1`"
+[[ "${(q)story_number}" =~ ^[0-9]+$ ]] || story_number="(RVDEV: INVALID STORY)"
+
+cp -n RVDEVREPLACE_projectdir/docs/work-notes/template-work-notes.md "${(q)file_path}"
+ex +"%s/RVDEVREPLACE_STORYNUMBER/${(q)story_number}" +"wq" "${(q)file_path}"
+
+echo "Work notes created: ${(q)file_path}"

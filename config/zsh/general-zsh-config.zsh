@@ -107,7 +107,9 @@ alias tnw='tmux new-window'
 alias tttys='tmux list-panes -a -F "#S:#I:#P - #{pane_tty} - #{pane_current_command}"'
 
 # -- Ripgrep --
+
 alias rgh='rg --hidden'
+rgf() { rg -lg "*$1*" . }
 
 # -- Misc --
 

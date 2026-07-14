@@ -30,8 +30,8 @@ Base
 ### Pre-PR Checklist
 
 - (RVDEV) Project TODOs completed
-- (RVDEV) Codebase TODOs completed
-- (RVDEV) Commit TODOs completed
+- (RVDEV) Codebase and Commit TODOs completed
+    - (RVDEV) `RVDEVREPLACE_prefix-pr-check`
 - (RVDEV) Eslint pass on modified files
 - (RVDEV) Prettier pass on modified files
 - (RVDEV) Finalize commits

@@ -16,3 +16,6 @@
 [submodule "config/vim/plugins/rust.vim"]
 	path = config/vim/plugins/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "repos/colorschemes"]
+	path = repos/colorschemes
+	url = git@github.com:vim/colorschemes.git

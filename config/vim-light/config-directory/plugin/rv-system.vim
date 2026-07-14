@@ -25,3 +25,11 @@ set regexpengine=0
 
 " Modeline is useful but insecure over the long term
 set nomodeline
+
+" No mouse events
+set mousescroll=ver:0,hor:0
+noremap <ScrollWheelUp> <Nop>
+noremap <ScrollWheelDown> <Nop>
+inoremap <ScrollWheelUp> <Nop>
+inoremap <ScrollWheelDown> <Nop>
+set mouse=

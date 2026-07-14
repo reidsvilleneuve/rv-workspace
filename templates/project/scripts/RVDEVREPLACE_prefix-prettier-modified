@@ -6,4 +6,4 @@ changed_files=`git diff --name-only "${(q)RVDEVREPLACE_prefix_git_base}" HEAD | 
 
 echo "Prettier: Files changed from ${(q)RVDEVREPLACE_prefix_git_base}:\n${(q)changed_files}"
 
-xargs -I% ./node_modules/.bin/prettier -w <<< "${(q)changed_files}"
+xargs ./node_modules/.bin/prettier --stdin-filepath -w <<< "${(q)changed_files}"
