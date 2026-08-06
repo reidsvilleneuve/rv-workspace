@@ -2,8 +2,8 @@
 
 source RVDEVREPLACE_projectdir/variables/git-variables.sh
 
-changed_files=`git diff --name-only "${(q)RVDEVREPLACE_prefix_git_base}" HEAD | rg 'ts$'`
+changed_files="$(git diff --name-only "${(q)RVDEVREPLACE_prefix_git_base}" HEAD)"
 
-echo "Prettier: Files changed from ${(q)RVDEVREPLACE_prefix_git_base}:\n${(q)changed_files}"
+echo "Prettier: Files changed from ${(q)RVDEVREPLACE_prefix_git_base}:\n$changed_files"
 
-xargs ./node_modules/.bin/prettier --stdin-filepath -w <<< "${(q)changed_files}"
+xargs ./node_modules/.bin/prettier -w <<< "$changed_files"

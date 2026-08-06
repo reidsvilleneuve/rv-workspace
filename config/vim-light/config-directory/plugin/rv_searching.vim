@@ -13,3 +13,6 @@ endif
 
 " Open quickfix
 nnoremap <leader>CO :copen<CR>
+
+" Current search term to quickfix list
+nnoremap <leader>/ :vimgrep // %<CR>:copen<CR>

@@ -32,6 +32,7 @@ set backspace=2
 
 nnoremap QQ @q
 nnoremap Q' :'',.norm @q<CR>
+nnoremap Q. :'.,.norm @q<CR>
 nnoremap QM :'m,.norm @q<CR>
 nnoremap QG :g//norm @q<CR>
 

@@ -18,3 +18,5 @@ nnoremap <silent> g<Space> :noh<CR>
 color industry
 
 let g:netrw_banner=0
+
+set scrolloff=3

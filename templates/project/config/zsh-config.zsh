@@ -6,7 +6,7 @@ alias pdRVDEVREPLACE_prefixwn="pushd RVDEVREPLACE_projectdir/docs/work-notes/in-
 
 alias RVDEVREPLACE_prefix-source-workspace="source RVDEVREPLACE_projectdir/config/zsh-config-workspace.zsh"
 
-current_directory="`pwd`"
+current_directory="`pwd -P`"
 workspace_directories=( \
     "RVDEVREPLACE_projectdir/repos/rvdev" \
     "RVDEVREPLACE_projectdir/repos/rvdev2" \
