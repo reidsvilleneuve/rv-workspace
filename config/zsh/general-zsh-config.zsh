@@ -88,6 +88,7 @@ alias gbl="git blame"
 alias gfp="git merge-base --fork-point"
 alias gtl="git tag --list --sort=-creatordate"
 alias grl="git reflog"
+alias grlc="git reflog \"$(git branch --show-current)\""
 alias grd="git range-diff"
 
 # Possibly-damaging commands are prefixed with "UNSAFE_" to decrease chance of accidental execution:

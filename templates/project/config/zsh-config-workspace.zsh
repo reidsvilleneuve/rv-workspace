@@ -7,7 +7,7 @@ export PATH="RVDEVREPLACE_projectdir/scripts/:${(q)PATH}"
 alias scrap="nvim RVDEVREPLACE_projectdir/docs/scratchpad.md"
 alias pdp="pushd RVDEVREPLACE_projectdir"
 alias pdr="pushd RVDEVREPLACE_projectdir/repos/rvdev"
-alias pdwn="pushd RVDEVREPLACE_projectdir/docs/work-notes/in-progress"
+alias pdst="pushd RVDEVREPLACE_projectdir/stories/in-progress"
 
 alias sgv="source RVDEVREPLACE_projectdir/variables/git-variables.sh"
 
