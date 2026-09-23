@@ -10,7 +10,8 @@ nnoremap <silent> <leader>cpi :let @+='setBreakpoint("'.expand('%:p').'", '.line
 
 " System copy + pasting
 nnoremap <silent> Y "+y
-nnoremap <silent> YY ^"+y$
+nnoremap <silent> YY "+yy
+vnoremap <silent> Y "+y
 nnoremap <leader>P "+P
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p

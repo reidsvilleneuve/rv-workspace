@@ -88,7 +88,6 @@ alias gbl="git blame"
 alias gfp="git merge-base --fork-point"
 alias gtl="git tag --list --sort=-creatordate"
 alias grl="git reflog"
-alias grlc="git reflog \"$(git branch --show-current)\""
 alias grd="git range-diff"
 
 # Possibly-damaging commands are prefixed with "UNSAFE_" to decrease chance of accidental execution:
@@ -96,8 +95,10 @@ alias UNSAFE_gpfwl="git push --force-with-lease --force-if-includes"
 alias UNSAFE_grs="git restore"
 
 gbcur() { git branch --show-current; }
-gpsu() { git push --set-upstream origin `git branch --show-current`; }
+gpsu() { git push --set-upstream origin "$(git branch --show-current)"; }
 gmb() { git merge-base HEAD "origin/$1"; }
+grlc() { git reflog "$(git branch --show-current)" }
+grdl() { git range-diff "$(git branch --show-current)"@{1}... }
 
 # -- Tmux --
 
@@ -114,6 +115,11 @@ alias tttys='tmux list-panes -a -F "#S:#I:#P - #{pane_tty} - #{pane_current_comm
 alias rgh='rg --hidden'
 rgf() { rg -lg "*$1*" . }
 
+# -- Overrides --
+
+# Do not overwrite files (provide `-f` to override) and verbose:
+alias mv="mv -nv"
+
 # -- Misc --
 
 alias l="ls -la"
@@ -123,9 +129,9 @@ alias scra="nvim ~/projects/self/docs/scratchpad.md"
 alias pd="pushd"
 
 rv_send_command_to_every_pane() {
-    for session in `tmux list-sessions -F '#S'`; do
-        for window in `tmux list-windows -t $session -F '#I' | sort`; do
-            for pane in `tmux list-panes -t $session:$window -F '#P' | sort`; do
+    for session in $(tmux list-sessions -F '#S'); do
+        for window in $(tmux list-windows -t $session -F '#I' | sort); do
+            for pane in $(tmux list-panes -t $session:$window -F '#P' | sort); do
                 tmux send-keys -t "$session:$window.$pane" "$*" C-m
             done
         done
