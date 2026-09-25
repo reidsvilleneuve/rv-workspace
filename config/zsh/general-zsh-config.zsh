@@ -15,6 +15,27 @@ bindkey -v
 # fpath=(~/.zsh/functions $fpath)
 # autoload -U compinit && compinit
 
+# -- NVM --
+
+autoload -U add-zsh-hook
+report-nvmrc() {
+  if ! command -v nvm >/dev/null 2>&1; then
+    echo "RVDEV"
+    return;
+  fi
+
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      echo "**NOTE**: .nvmrc does not match current nvm version"
+    fi
+  fi
+}
+add-zsh-hook chpwd report-nvmrc
+
 # -- Misc --
 
 set -o ignoreeof # Stops exiting upon ctrl-d

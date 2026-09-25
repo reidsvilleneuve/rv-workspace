@@ -19,3 +19,25 @@ alias gscur="git switch \"${(q)RVDEVREPLACE_prefix_git_current}\""
 alias gspr="git switch \"${(q)RVDEVREPLACE_prefix_git_pr}\""
 alias gsbase="git switch \"${(q)RVDEVREPLACE_prefix_git_base}\""
 alias gsmain="git switch main"
+
+# Repos
+
+await-repo() {
+    current_directory="`pwd -P`"
+
+    [[ "RVDEVREPLACE_projectdir/repos/rvdev" == "$current_directory" ]] \
+        && source 'RVDEVREPLACE_projectdir/config/zsh-rvdev-config.zsh'
+}
+await-repo
+
+# Repos setup
+
+autoload -U add-zsh-hook
+root_directories=( \
+    "RVDEVREPLACE_projectdir" \
+    "RVDEVREPLACE_projectdir/repos" \
+)
+
+if [[ " ${root_directories[@]} " =~ " `pwd -P` " ]]; then
+    add-zsh-hook chpwd await-repo
+fi
