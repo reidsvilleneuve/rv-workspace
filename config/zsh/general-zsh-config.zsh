@@ -20,7 +20,7 @@ bindkey -v
 autoload -U add-zsh-hook
 report-nvmrc() {
   if ! command -v nvm >/dev/null 2>&1; then
-    echo "RVDEV"
+    echo "NVM not installed"
     return;
   fi
 
@@ -130,6 +130,7 @@ alias tl='tmux list-sessions'
 alias tkss='tmux kill-session -t'
 alias tnw='tmux new-window'
 alias tttys='tmux list-panes -a -F "#S:#I:#P - #{pane_tty} - #{pane_current_command}"'
+alias tlw='tmux list-windows -a'
 
 # -- Ripgrep --
 

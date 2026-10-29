@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd RVDEVREPLACE_projectdir
+
+git add .
+git commit -m 'Cron-scheduled project commit'

@@ -16,6 +16,7 @@ set shortmess-=S
 nnoremap <silent> g<Space> :noh<CR>
 
 color industry
+set cursorline
 
 let g:netrw_banner=0
 

@@ -54,5 +54,3 @@ RVDEV
 1. RVDEV
 
     - **Expected**: RVDEV
-
-vim:textwidth=80:tabstop=4:colorcolumn=80

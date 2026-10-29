@@ -1,2 +1,2 @@
 " Handle interactive rebase per commit message annotations:
-nnoremap <leader><leader>m /RVDEV<Esc>2yt-ggpA: <Esc>:noh<CR>:startinsert!<CR>
+nnoremap <leader>r :%s/\vpick (.*) (RVDEV_)(.*):/\L\3 \1 \U\2\3:<CR>

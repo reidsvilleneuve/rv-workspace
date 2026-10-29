@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 file_name="`git branch --show-current | tr '[:upper:]' '[:lower:]' | sed 's/[^[:alnum:]]/-/g'`.md"
-file_path="RVDEVREPLACE_projectdir/stories/${(q)file_name}"
+file_path="RVDEVREPLACE_projectdir/stories/in-progress/${(q)file_name}"
 
 if [ -e "${(q)file_path}" ]; then
     echo "File already exists: ${(q)file_path}"
